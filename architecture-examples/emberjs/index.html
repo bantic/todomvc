@@ -19,7 +19,7 @@
 						<ul id="todo-list">
               {{partial 'list_todos'}}
 						</ul>
-						{{view Ember.Checkbox id="toggle-all" checkedBinding="allAreDone"}}
+						{{view Ember.Checkbox id="toggle-all" checkedBinding=allAreDone}}
 					</section>
 
           {{partial 'footer'}}
@@ -35,7 +35,7 @@
           {{#if isEditing}}
             {{view Todos.EditTodoView todoBinding=this}}
           {{else}}
-            {{view Ember.Checkbox checkedBinding="isCompleted" class="toggle"}}
+            {{view Ember.Checkbox checkedBinding=isCompleted class="toggle"}}
             <label {{action "editTodo" on="doubleClick"}}>{{title}}</label>
             <button {{action "removeTodo"}} class="destroy"></button>
           {{/if}}
