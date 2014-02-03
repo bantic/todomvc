@@ -30,14 +30,10 @@ Todos.TodosController = Ember.ArrayController.extend({
 		},
 	},
 
+	/* properties */
+
 	remaining: Ember.computed.filterBy('content', 'isCompleted', false),
 	completed: Ember.computed.filterBy('content', 'isCompleted', true),
-
-	remainingFormatted: function () {
-		var remaining = this.get('remaining.length');
-		var plural = remaining === 1 ? 'item' : 'items';
-		return '<strong>%@</strong> %@ left'.fmt(remaining, plural);
-	}.property('remaining.length'),
 
 	allAreDone: function (key, value) {
 		if (value !== undefined) {

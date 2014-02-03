@@ -30,7 +30,7 @@
 						{{input type="checkbox" id="toggle-all" checked=allAreDone}}
 					</section>
 					<footer id="footer">
-						<span id="todo-count">{{{remainingFormatted}}}</span>
+            <span id="todo-count"><strong>{{remaining.length}}</strong> {{pluralize 'item' remaining.length}} left.</span>
 						<ul id="filters">
 							<li>
 								{{#link-to "todos.index" activeClass="selected"}}All{{/link-to}}
@@ -73,5 +73,6 @@
 		<script src="js/controllers/todo_controller.js"></script>
 		<script src="js/views/edit_todo_view.js"></script>
 		<script src="js/views/todos_view.js"></script>
+		<script src="js/helpers/pluralize.js"></script>
 	</body>
 </html>
