@@ -42,9 +42,9 @@
 								{{#link-to "todos.completed" activeClass="selected"}}Completed{{/link-to}}
 							</li>
 						</ul>
-						{{#if hasCompleted}}
+						{{#if completed.length}}
 							<button id="clear-completed" {{action "clearCompleted"}}>
-								Clear completed ({{completed}})
+								Clear completed ({{completed.length}})
 							</button>
 						{{/if}}
 					</footer>
