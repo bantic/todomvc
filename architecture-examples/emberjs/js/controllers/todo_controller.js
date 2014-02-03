@@ -50,7 +50,11 @@ Todos.TodoController = Ember.ObjectController.extend({
 
 		todo.deleteRecord();
 		todo.save();
-	}
+	},
+
+	saveWhenCompleted: function () {
+		this.get('model').save();
+	}.observes('isCompleted')
 });
 
 /* vim: set tabstop=2 softtabstop=2 shiftwidth=2 noexpandtab : */
